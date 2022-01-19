@@ -6,7 +6,6 @@ import axios from "axios"
 import { UserData } from "../Object/UserData";
 
 const CLIENT_ID = "1037957664679-avvmdv7t0cca98fdn09fbo8h1mo2v1p9.apps.googleusercontent.com"
-
 class GoogleBtn extends Component {
     constructor(props) {
         super(props);

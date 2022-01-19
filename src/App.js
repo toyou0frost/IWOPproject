@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 
 import MainPage from './components/page/MainPage';
 import Lecture from './components/page/Lecture';
+import LectureProduction from './components/page/LectureProduction';
 
 const AppStyle = styled.div`
   padding: 0;
@@ -23,7 +24,8 @@ function App() {
       <Router>
         <Routes>
           <Route exact path='/' element={ <MainPage /> }/>
-            <Route exact path='/Lecture:idx' element={ <Lecture />} />
+          <Route exact path='/LectureProduction' element={ <LectureProduction /> }/>
+          <Route exact path='/Lecture:idx' element={ <Lecture />} />
         </Routes>
       </Router>
     </AppStyle>

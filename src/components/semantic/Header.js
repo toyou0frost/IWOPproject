@@ -52,6 +52,7 @@ const Header = () => {
                 <div className="Header_center">
                     <ul>
                         {li}
+                        &nbsp;&nbsp;&nbsp;&nbsp;<Link to={'/LectureProduction'}>강의 제작</Link>
                     </ul>
                 </div>  
                 <div className="Header_left">
