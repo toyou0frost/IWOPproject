@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
+import styled from "styled-components"; // 1. styled components 호출
 
 import GoogleAuth from "../function/GoogleBtn";
 import GetDatabase from "../function/GetDatabase";
 
-const HeaderStyle = styled.div`
+// 2. const 파일명Style = styled.div`` 형태로 열고 백틱 안쪽에 css 코드 작성
+const HeaderStyle = styled.div` 
     .Header_main{
         display: flex;
         padding: 3vh 0.5vh;
