@@ -1,11 +1,53 @@
 import React, { useEffect, useState } from "react";
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import { useNavigate } from 'react-router-dom';
+import styled from "styled-components";
 
 import Header from "../semantic/Header";
 import { UserData } from "../Object/UserData";
 import GetDatabase from "../function/GetDatabase";
 import SetDatabase from "../function/SetDatabase";
+import MainPage from "./MainPage";
+
+const LectureProductionStyle = styled.div` 
+    .main{
+        background-color : #FBEAEB;
+        width: 100vw;
+        height: 88vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    span{
+        color: gray;
+        font-size: 12px;   
+        padding-right: 10px;
+    }
+    .header{
+        padding: 30px;
+    }
+    .header > select{
+        width: 10vw;
+        height: 5vh;
+    }
+    .header > input{
+        width: 65vw;
+        height: 5vh;
+        padding: 0;
+    }
+    textarea{
+        width: 75vw;
+        height: 60vh;
+    }
+    .submit{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 75vw;
+        padding: 35px;
+    }
+
+`
 
 const LectureProduction = () => {
     const navigate = useNavigate();
@@ -128,22 +170,38 @@ const LectureProduction = () => {
     }
 
     return(
-        <div>
-            <Header />
-            <select onChange={(e) => {if(e.target.value !== "0") return setLectureNum(e.target.value);}}>
-                <option value="0">Lecture</option>
-                <option value={num[0]}>{num[0]}</option>
-                <option value={num[1]}>{num[1]}</option>
-                <option value={num[2]}>{num[2]}</option>
-                <option value={num[3]}>{num[3]}</option>
-                <option value={num[4]}>{num[4]}</option>
-            </select>
-            PDF 파일 등록
-            <input type="file" accept=".pdf" onChange={(e)=>{setPdf(e.target.files[0])}} />
-            <input type="text" placeholder="강의 명" onChange={(e) => {setTitle(e.target.value)}} />
-            <textarea cols="30" rows="10" placeholder="강의 내용" onChange={(e) => {setText(e.target.value)}}></textarea>
-            <input type="button" value="강의 등록" onClick={upload} />
-        </div>
+        <LectureProductionStyle>
+            <div>
+                <Header />
+                {/* 코드가 왜 이렇게 생겼나 ......싶어서 들어왔을거 같은데 */}
+                {/* 클래스명 같은거 수정해서 너 편한대로 해 .. !!!!!! .... */}
+                <div class="main">
+                    <div class="header">
+                        <select onChange={(e) => {if(e.target.value !== "0") return setLectureNum(e.target.value);}}>
+                            <option value="0">Lecture</option>
+                            <option value={num[0]}>{num[0]}</option>
+                            <option value={num[1]}>{num[1]}</option>
+                            <option value={num[2]}>{num[2]}</option>
+                            <option value={num[3]}>{num[3]}</option>
+                            <option value={num[4]}>{num[4]}</option>
+                        </select>
+                        <input type="text" placeholder="강의 명" onChange={(e) => {setTitle(e.target.value)}} />
+                    </div>
+
+                    <div class="input">
+                        <textarea cols="30" rows="10" placeholder="강의 내용" onChange={(e) => {setText(e.target.value)}}></textarea>
+                    </div>
+
+                    <div class="submit">
+                        <div>
+                            <span>PDF 파일 등록</span>
+                            <input type="file" accept=".pdf" onChange={(e)=>{setPdf(e.target.files[0])}} />
+                        </div>
+                        <input type="button" value="강의 등록" onClick={upload} />
+                    </div>
+                </div>
+            </div>
+        </LectureProductionStyle>
     )
 }
 

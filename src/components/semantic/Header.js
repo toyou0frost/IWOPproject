@@ -6,25 +6,35 @@ import GoogleAuth from "../function/GoogleBtn";
 import GetDatabase from "../function/GetDatabase";
 
 // 2. const 파일명Style = styled.div`` 형태로 열고 백틱 안쪽에 css 코드 작성
+// #2E3C7E #FBEAEB
 const HeaderStyle = styled.div` 
+
     .Header_main{
+        width: 100vw;
+        height: 6vh;
         display: flex;
-        padding: 3vh 0.5vh;
-        background-color: #ccc;
+        padding: 3vh 0vh;
+        background-color: #2E3C7E;
+        align-items: center;
+        color: #FBEAEB;
     }
     .Header_right{
         flex: 1;
     }
     .Header_center{
         flex: 2;
+        color: #FBEAEB;
     }
     .Header_center > ul{
         display: flex;
         padding: 0;
         margin: 0;
     }
+    .Header_center > ul > li > a {
+        color: #FBEAEB;
+    }
     .Header_left{
-        flex: 1;
+        flex: 0.3;
     }
 `
 
