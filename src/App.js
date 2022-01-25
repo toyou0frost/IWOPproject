@@ -7,6 +7,12 @@ import Lecture from './components/page/Lecture';
 import LectureProduction from './components/page/LectureProduction';
 
 const AppStyle = styled.div`
+  @font-face {
+      font-family: 'KOTRAHOPE';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+  }
   padding: 0;
   margin: 0;
   ul{

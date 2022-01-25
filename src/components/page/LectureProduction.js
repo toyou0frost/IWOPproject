@@ -133,7 +133,7 @@ const LectureProduction = () => {
         SetDatabase(lectureNum, lectureNumRoma, lecturer, title, text);
         const storage = getStorage();
         if(pdf === "") return;
-        const storageRef = ref(storage, `/Lecture/${lectureNum}/${lectureNum}_${lectureNumRoma}/` + pdf.name);
+        const storageRef = ref(storage, `/Lecture/${lectureNum}/${lectureNum}_${lectureNumRoma}/` + `${lectureNum}_${lectureNumRoma}.pdf`);
         uploadBytes(storageRef, pdf).then((snapshot) => {
             console.log('Uploaded a blob or file!');
         });

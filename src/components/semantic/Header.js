@@ -17,10 +17,10 @@ const HeaderStyle = styled.div`
         display: flex;
         padding: 3vh 0vh;
         background-color: #2E3C7E;
-        /* align-items: center; */
+        /* align-items: center; */ // 이거 버그 수정좀 // 이 코드 적용하면 Header 목록에 커서 올렸을 때 중앙 정렬이 Hidden된 목록을 포함해서 이상해짐
         color: #FBEAEB;
     }
-    .Header_right{
+    .Header_left{
         flex: 1;
     }
     .Header_center{
@@ -32,16 +32,34 @@ const HeaderStyle = styled.div`
         padding: 0;
         margin: 0;
     }
-    .Header_center > ul > li > a {
-        color: #FBEAEB;
+    .Header_center > ul > li{
+        margin: 0 1.5vh;
+        font-family: 'KOTRAHOPE';
+        font-size: 1.2em;
+    }
+    .Header_center > ul > li:hover 
+    .Header_center_hover{
+        max-height: 100%;
+        transition: max-height 0.3s;
+    }
+    .Header_center_hover:hover{
+        max-height: 100%;
+        transition: max-height 0.3s;    
     }
     .Header_center_hover{
-        background-color: #2E3C7E;
+        max-height: 0;
+        overflow: hidden;
+        background-color: rgba(37, 48, 99, 0.8);
+        transition: max-height 0.3s;
+        font-family: 'KOTRAHOPE';
     }
     .Header_center_hover > ul > li > a {
         color: white;
     }
-    .Header_left{
+    .Header_center_hover_li{
+        padding: 0.3vh 0.5vh;
+    }
+    .Header_right{
         flex: 0.3;
     }
 `
@@ -62,7 +80,6 @@ const Header = () => {
     
     i = 0;
 
-    console.log(hover_li)
     useEffect(() => {
         GetDatabase(setData);
     }, [])
@@ -75,10 +92,9 @@ const Header = () => {
                 break;
             }
             hover_num[i].push(key2);
-            hover_li[i].push(<li><Link to={`/Lecture${num[i]}/${hover_num[i][j]}`}>{hover_num[i][j]}</Link></li>);
+            hover_li[i].push(<li className="Header_center_hover_li"><Link to={`/Lecture${num[i]}/${hover_num[i][j]}`}>{hover_num[i][j]}</Link></li>);
             j++;
         }
-        console.log(hover_li);
         li.push(<li>Lecture {num[i]}<div className="Header_center_hover"><ul>{hover_li[i]}</ul></div></li>);
         i++;
     }
@@ -86,7 +102,7 @@ const Header = () => {
     return(
         <HeaderStyle>
             <div className="Header_main">
-                <div className="Header_right">
+                <div className="Header_left">
                     <Link to={'/'}><img src="" alt="logo" /></Link>
                 </div>
                 <div className="Header_center">
@@ -95,7 +111,7 @@ const Header = () => {
                         &nbsp;&nbsp;&nbsp;&nbsp;<Link to={'/LectureProduction'}>강의 제작</Link>
                     </ul>
                 </div>  
-                <div className="Header_left">
+                <div className="Header_right">
                     <GoogleAuth />
                 </div>
             </div>
