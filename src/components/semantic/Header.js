@@ -8,14 +8,16 @@ import GetDatabase from "../function/GetDatabase";
 // 2. const 파일명Style = styled.div`` 형태로 열고 백틱 안쪽에 css 코드 작성
 // #2E3C7E #FBEAEB
 const HeaderStyle = styled.div` 
-
+    ul{
+        padding: 0;
+    }
     .Header_main{
         width: 100vw;
         height: 6vh;
         display: flex;
         padding: 3vh 0vh;
         background-color: #2E3C7E;
-        align-items: center;
+        /* align-items: center; */
         color: #FBEAEB;
     }
     .Header_right{
@@ -33,6 +35,12 @@ const HeaderStyle = styled.div`
     .Header_center > ul > li > a {
         color: #FBEAEB;
     }
+    .Header_center_hover{
+        background-color: #2E3C7E;
+    }
+    .Header_center_hover > ul > li > a {
+        color: white;
+    }
     .Header_left{
         flex: 0.3;
     }
@@ -43,14 +51,35 @@ const Header = () => {
     const num = [];
     const li = [];
     let i = 0;
+    let j = 0;
 
+    for(let key1 in data){
+        i++;
+    }
+
+    const hover_li = Array.from(Array(i), () => Array(0).fill(null));
+    const hover_num = Array.from(Array(i), () => Array(0).fill(null));
+    
+    i = 0;
+
+    console.log(hover_li)
     useEffect(() => {
         GetDatabase(setData);
     }, [])
 
-    for (var key in data) {
-        num.push(key);
-        li.push(<li><Link to={`/Lecture${num[i]}`}>Lecture {num[i]}</Link></li>);
+    for (let key1 in data) {
+        j = 0;
+        num.push(key1);
+        for(let key2 in data[key1]){
+            if(key2 === "default"){
+                break;
+            }
+            hover_num[i].push(key2);
+            hover_li[i].push(<li><Link to={`/Lecture${num[i]}/${hover_num[i][j]}`}>{hover_num[i][j]}</Link></li>);
+            j++;
+        }
+        console.log(hover_li);
+        li.push(<li>Lecture {num[i]}<div className="Header_center_hover"><ul>{hover_li[i]}</ul></div></li>);
         i++;
     }
 

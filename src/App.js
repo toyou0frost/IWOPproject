@@ -25,7 +25,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={ <MainPage /> }/>
           <Route exact path='/LectureProduction' element={ <LectureProduction /> }/>
-          <Route exact path='/Lecture:idx' element={ <Lecture />} />
+          <Route exact path='/Lecture:idx/:idx' element={ <Lecture />} />
         </Routes>
       </Router>
     </AppStyle>
