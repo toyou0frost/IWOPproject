@@ -13,24 +13,30 @@ const HeaderStyle = styled.div`
     }
     .Header_main{
         width: 100vw;
-        height: 6vh;
+        height: 10vh;
         display: flex;
         padding: 3vh 0vh;
         background-color: #2E3C7E;
-        /* align-items: center; */ // 이거 버그 수정좀 // 이 코드 적용하면 Header 목록에 커서 올렸을 때 중앙 정렬이 Hidden된 목록을 포함해서 이상해짐
         color: #FBEAEB;
     }
     .Header_left{
         flex: 1;
+        display: flex;
+        align-items: center;
     }
     .Header_center{
         flex: 2;
         color: #FBEAEB;
+        display: grid;
+        align-items: center;
+    }
+    .Header_center > ul > a{
+        font-weight: 800;
+        color: #FBEAEB;
     }
     .Header_center > ul{
         display: flex;
-        padding: 0;
-        margin: 0;
+        align-content: center;
     }
     .Header_center > ul > li{
         margin: 0 1.5vh;
@@ -58,9 +64,12 @@ const HeaderStyle = styled.div`
     }
     .Header_center_hover_li{
         padding: 0.3vh 0.5vh;
+        font-size: 1em;
     }
     .Header_right{
         flex: 0.3;
+        display: flex;
+        align-items: center;
     }
 `
 
