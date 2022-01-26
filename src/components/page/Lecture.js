@@ -11,6 +11,7 @@ const LectureStyle = styled.div`
         display: flex;
         flex-direction: row;
         border-bottom: 2px solid gray;
+        pointer-events: none;
     }
     .Lecture_header > div > h2{
         font-family: 'KOTRAHOPE';
@@ -42,21 +43,23 @@ const Lecture = () => {
     const idx = window.location.href.split("Lecture")[1];
     const key1 = idx.split("/")[0];
     const key2 = idx.split("/")[1];
-    const iframe_url = "https://firebasestorage.googleapis.com/v0/b/iwopproject.appspot.com/o/Lecture%2FIV%2FIV_II%2FIV_II.pdf?alt=media&token=ac13c6ed-33a5-4e25-af95-f7111c3b965b"
-    // const iframe_url = GetStorageURL(key1, key2);
+    // const iframe_url = "https://firebasestorage.googleapis.com/v0/b/iwopproject.appspot.com/o/Lecture%2FIV%2FIV_II%2FIV_II.pdf?alt=media&token=ac13c6ed-33a5-4e25-af95-f7111c3b965b"
+    const iframe_url = GetStorageURL(key1, key2);
     let title;
     let lecturer;
     let text;
     
+    console.log(iframe_url)
+
     if(data !== undefined){
         title = data[key1][key2].Title;
         lecturer = data[key1][key2].Lecturer;  
         text = data[key1][key2].Text;  
     }
 
-    useEffect(() => {
-        GetDatabase(setData);
-    })
+    // useEffect(() => {
+    //     GetDatabase(setData);
+    // })
     
 
     return(
