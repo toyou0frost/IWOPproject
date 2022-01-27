@@ -12,6 +12,8 @@ const LectureFooterStyle = styled.div`
         flex-direction: row;
         justify-content: center;
         padding: 0;
+        margin-block-end: 0;
+        margin-block-start: 1.3em;
     }
     .LectureFooter_list_li{
         flex: 0.03;

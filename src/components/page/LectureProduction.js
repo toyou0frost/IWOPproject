@@ -12,8 +12,6 @@ import MainPage from "./MainPage";
 const LectureProductionStyle = styled.div` 
     .main{
         background-color : #FBEAEB;
-        width: 100vw;
-        height: 88vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -24,27 +22,42 @@ const LectureProductionStyle = styled.div`
         padding-right: 10px;
     }
     .header{
-        padding: 30px;
+        display: flex;
+        align-items: center;
+        height: 15vh;
     }
     .header > select{
         width: 10vw;
-        height: 5vh;
+        height: 46px;
     }
     .header > input{
         width: 65vw;
-        height: 5vh;
-        padding: 0;
+        height: 40px;
+    }
+    .header > input:focus{
+        outline: 0;
+    }
+    .header > select:focus{
+        outline: 0;
+    }
+    .input{
+        height: 60vh;
     }
     textarea{
         width: 75vw;
         height: 60vh;
+        resize: none;
+        padding: 3px;
+    }
+    textarea:focus{
+        outline: 0;
     }
     .submit{
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 75vw;
-        padding: 35px;
+        height: 10vh;
     }
 
 `
@@ -173,8 +186,6 @@ const LectureProduction = () => {
         <LectureProductionStyle>
             <div>
                 <Header />
-                {/* 코드가 왜 이렇게 생겼나 ......싶어서 들어왔을거 같은데 */}
-                {/* 클래스명 같은거 수정해서 너 편한대로 해 .. !!!!!! .... */}
                 <div class="main">
                     <div class="header">
                         <select onChange={(e) => {if(e.target.value !== "0") return setLectureNum(e.target.value);}}>

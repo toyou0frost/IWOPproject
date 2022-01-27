@@ -9,6 +9,9 @@ import GetStorageURL from "../function/GetStorageURL";
 import LectureFooter from "../semantic/LectureFooter";
 
 const LectureStyle = styled.div`
+    .Lecture{
+        background-color: #FBEAEB;
+    }
     .Lecture_header{
         display: flex;
         flex-direction: row;
@@ -22,23 +25,32 @@ const LectureStyle = styled.div`
         padding-left: 1vh;
     }
     .Lecture_header_left{
-        flex: 0.5;
+        flex: 1;
+        display: flex;
+        align-items: center;
     }
     .Lecture_header_center{
         flex: 2;
     }
     .Lecture_header_right{
-        flex: 0.3;
+        flex: 1;
+        display: flex;
+        justify-content: center;
     }
     .Lecture_main{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        height: 85vh;
     }
     .Lecture_main > iframe{
         width: 110vh;
         height: 60vh;
+        padding: 30px;
+    }
+    #text{
+        white-space: pre-line;
     }
 `
 
@@ -84,7 +96,7 @@ const Lecture = (props) => {
                 </div>
                 <div className="Lecture_main">
                     {iframe_url === false ? "" : <iframe src={iframe_url} frameBorder="0"></iframe>}
-                    <p>{text}</p>
+                    <div id="text">{text}</div>
                 </div>
                 <LectureFooter key1={key1} key2={key2}/>
             </div>

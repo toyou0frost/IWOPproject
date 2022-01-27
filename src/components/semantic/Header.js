@@ -12,7 +12,6 @@ const HeaderStyle = styled.div`
         padding: 0;
     }
     .Header_main{
-        width: 100vw;
         height: 10vh;
         display: flex;
         padding: 3vh 0vh;
