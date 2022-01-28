@@ -8,7 +8,7 @@ function GetStorageURL(lectureNum, lectureNumRoma, setIframe_url){
         setIframe_url(url);
     })
     .catch((error) => {
-        // console.log(error);
+        console.log(error);
         setIframe_url(false);
     })
 }

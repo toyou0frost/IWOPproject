@@ -26,7 +26,7 @@ const HeaderStyle = styled.div`
     .Header_center{
         flex: 2;
         color: #FBEAEB;
-        display: grid;
+        /* display: grid; */
         align-items: center;
     }
     .Header_center > ul > a{
@@ -41,6 +41,7 @@ const HeaderStyle = styled.div`
         margin: 0 1.5vh;
         font-family: 'KOTRAHOPE';
         font-size: 1.2em;
+        z-index: 100;
     }
     .Header_center > ul > li:hover 
     .Header_center_hover{

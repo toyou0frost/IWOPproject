@@ -24,22 +24,33 @@ const LectureFooter = (props) => {
     const [data, setData] = useState();
     const arr = [];
     let i = 0;
+    let bool = false;
+    let leftArrowKey = '';
+    let rightArrowKey = '';
 
     useEffect(() => {
         GetDatabase(setData);
     }, [])
     if(data !== undefined){
         for(let key2 in data[props.key1]){
+            if(bool){
+                rightArrowKey = key2;
+                bool = false;
+            }
             if(key2 === "default"){
                 break;
             }
             i++;
             if(key2 === props.key2){
+                arr.unshift(<a href={`/Lecture${props.key1}/${leftArrowKey}`}><img src="/img/leftArrow.png"></img></a>)
                 arr.push(<li className="LectureFooter_list_li"><a className="current" href={`/Lecture${props.key1}/${key2}`}>{i}</a></li>);
+                bool = true;
                 continue
             }
             arr.push(<li className="LectureFooter_list_li"><a href={`/Lecture${props.key1}/${key2}`}>{i}</a></li>);
+            leftArrowKey = key2;
         }
+        arr.push(<a href={`/Lecture${props.key1}/${rightArrowKey}`}><img src="/img/rightArrow.png"></img></a>);
     }
 
     return(

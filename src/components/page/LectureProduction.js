@@ -25,6 +25,11 @@ const LectureProductionStyle = styled.div`
         display: flex;
         align-items: center;
         height: 15vh;
+        pointer-events: none;
+    }
+    .header > *{
+        pointer-events: all;
+        z-index: 0;
     }
     .header > select{
         width: 10vw;
@@ -79,7 +84,8 @@ const LectureProduction = () => {
 
     useEffect(() => {
         if(UserData.userName === ""){
-            navigate('/')
+            navigate('/');
+            alert("로그인 후 이용해 주세요.");
         }
     }, )
 
@@ -138,18 +144,28 @@ const LectureProduction = () => {
 
     const upload = () => {
         if(UserData.userName === ""){
-            navigate('/')
+            navigate('/');
+            alert("로그인 후 이용해 주세요.");
             return
         }
         const lecturer = UserData.userName;
-        if(!isPass()) return;
+        if(!isPass()){
+            alert("양식을 맞춰 주세요.");
+            return;
+        }
         SetDatabase(lectureNum, lectureNumRoma, lecturer, title, text);
         const storage = getStorage();
-        if(pdf === "") return;
+        if(pdf === ""){
+            alert("강의 등록 완료!");
+            navigate('/');
+            return;
+        }
         const storageRef = ref(storage, `/Lecture/${lectureNum}/${lectureNum}_${lectureNumRoma}/` + `${lectureNum}_${lectureNumRoma}.pdf`);
         uploadBytes(storageRef, pdf).then((snapshot) => {
             console.log('Uploaded a blob or file!');
         });
+        alert("강의 등록 완료!");
+        navigate('/');
     }
 
     function isPass(){

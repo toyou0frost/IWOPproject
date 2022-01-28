@@ -26,13 +26,13 @@ class GoogleBtn extends Component {
 
     login(response) {
         UserData.googleId = response.googleId;
-        UserData.userName = response.yu.nf;
+        UserData.userName = response.profileObj.name;
         if(response.accessToken){
             this.setState((state) => ({
                 isLogined: true,
                 accessToken: response.tokenId,
                 googleId: response.googleId,
-                userName: response.yu.nf,
+                userName: response.profileObj.name,
             }));
         
         // axios
