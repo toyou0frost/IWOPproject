@@ -11,10 +11,11 @@ import MainPage from "./MainPage";
 
 const LectureProductionStyle = styled.div` 
     .main{
-        background-color : #FBEAEB;
+        background-color : #FCF6F5;
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 88vh;
     }
     span{
         color: gray;

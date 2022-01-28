@@ -10,14 +10,16 @@ import LectureFooter from "../semantic/LectureFooter";
 
 const LectureStyle = styled.div`
     .Lecture{
-        background-color: #FBEAEB;
+        background-color: #FCF6F5;
     }
     .Lecture_header{
         display: flex;
         flex-direction: row;
-        border-bottom: 2px solid gray;
-        background-color: #2E3C7E;
+        background-color: #279ed0;
         color: #FBEAEB;
+        align-items: center;
+        height: 6vh;
+        padding: 3vh 0vh;
         /* pointer-events: none; */
     }
     .Lecture_header > div > h2{
@@ -42,7 +44,7 @@ const LectureStyle = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        height: 85vh;
+        // height: 85vh;
     }
     .Lecture_main > iframe{
         width: 110vh;

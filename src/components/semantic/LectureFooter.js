@@ -5,21 +5,33 @@ import GetDatabase from "../function/GetDatabase";
 
 const LectureFooterStyle = styled.div`
     .current{
-        color: red;
+        color: #EC8B5E;
     }
     .LectureFooter_list{
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: stretch;
         padding: 0;
         margin-block-end: 0;
         margin-block-start: 1.3em;
     }
     .LectureFooter_list_li{
         flex: 0.03;
+        display: flex;
+        justify-content: center;
     }
     .pointer{
         cursor: pointer;
+        width: 16px;
+        height: 16px;
+        padding: 3px
+    }
+    #arrow{
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+        padding: 3px 
     }
 `
 
@@ -46,7 +58,7 @@ const LectureFooter = (props) => {
             }
             i++;
             if(key2 === props.key2){
-                {i === 1 ? arr.unshift(<img className="pointer" src="/img/leftArrow.png"></img>) : arr.unshift(<a href={`/Lecture${props.key1}/${leftArrowKey}`}><img src="/img/leftArrow.png"></img></a>)}
+                {i === 1 ? arr.unshift(<img className="pointer" src="/img/fast-backward.png"></img>) : arr.unshift(<a href={`/Lecture${props.key1}/${leftArrowKey}`}><img src="/img/fast-backward.png" id="arrow"></img></a>)}
                 arr.push(<li className="LectureFooter_list_li"><a className="current" href={`/Lecture${props.key1}/${key2}`}>{i}</a></li>);
                 bool = true;
                 endCheck = i;
@@ -55,7 +67,7 @@ const LectureFooter = (props) => {
             arr.push(<li className="LectureFooter_list_li"><a href={`/Lecture${props.key1}/${key2}`}>{i}</a></li>);
             leftArrowKey = key2;
         }
-        {endCheck === i ? arr.push(<img className="pointer" src="/img/rightArrow.png"></img>) : arr.push(<a href={`/Lecture${props.key1}/${rightArrowKey}`}><img src="/img/rightArrow.png"></img></a>)}
+        {endCheck === i ? arr.push(<img className="pointer" src="/img/fast-forward.png"></img>) : arr.push(<a href={`/Lecture${props.key1}/${rightArrowKey}`}><img src="/img/fast-forward.png" id="arrow"></img></a>)}
         
     }
 

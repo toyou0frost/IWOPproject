@@ -12,11 +12,11 @@ const HeaderStyle = styled.div`
         padding: 0;
     }
     .Header_main{
-        height: 10vh;
+        height: 6vh;
         display: flex;
         padding: 3vh 0vh;
-        background-color: #2E3C7E;
-        color: #FBEAEB;
+        background-color: #279ed0;
+        color: #FCF6F5;
     }
     .Header_left{
         flex: 1;
@@ -25,13 +25,13 @@ const HeaderStyle = styled.div`
     }
     .Header_center{
         flex: 2;
-        color: #FBEAEB;
+        color: #FCF6F5;
         /* display: grid; */
         align-items: center;
     }
     .Header_center > ul > a{
         font-weight: 800;
-        color: #FBEAEB;
+        color: #FCF6F5;
     }
     .Header_center > ul{
         display: flex;
@@ -55,7 +55,7 @@ const HeaderStyle = styled.div`
     .Header_center_hover{
         max-height: 0;
         overflow: hidden;
-        background-color: rgba(37, 48, 99, 0.8);
+        background-color: rgba(92, 169, 202, 0.6);
         transition: max-height 0.3s;
         font-family: 'KOTRAHOPE';
     }
