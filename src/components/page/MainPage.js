@@ -4,13 +4,42 @@ import styled from 'styled-components'
 import Header from "../semantic/Header";
 
 const MainPageStyled = styled.div`
-
+    .mainpage_main > h1{
+        font-family: "LEIXO";
+        color: #279ed0;
+        font-size: 8.5em;
+        margin-bottom: 5vh;
+    }
+    .mainpage_main > p{
+        color: #279ed0;
+    }
+    @font-face{
+        font-family: 'LEIXO';
+        src: url('/assets/LEIXO.ttf') format('truetype'),
+        url('/assets/LEIXO.eot') format('embedded-opentype');
+    }
+    .mainpage_main{
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 `
 
 const MainPage = () => {
     return(
-        <MainPageStyled>
+        <MainPageStyled>    
             <Header />
+            <div className="mainpage_main">    
+                <h1>
+                    W O P E D U
+                </h1>
+                <p>
+                    IWOP Education
+                </p>
+            </div>
         </MainPageStyled>
     )
 }

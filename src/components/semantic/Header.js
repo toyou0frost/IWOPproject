@@ -11,6 +11,11 @@ const HeaderStyle = styled.div`
     ul{
         padding: 0;
     }
+    .logo{
+        font-family: "LEIXO";
+        color: white;
+        margin-left: 1vh;
+    }
     .Header_main{
         height: 6vh;
         display: flex;
@@ -112,7 +117,11 @@ const Header = () => {
         <HeaderStyle>
             <div className="Header_main">
                 <div className="Header_left">
-                    <Link to={'/'}><img src="" alt="logo" /></Link>
+                    <Link to={'/'}>
+                        <h1 className="logo">
+                            WOPEDU
+                        </h1>
+                    </Link>
                 </div>
                 <div className="Header_center">
                     <ul>
