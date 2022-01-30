@@ -11,7 +11,6 @@ import MainPage from "./MainPage";
 
 const LectureProductionStyle = styled.div` 
     .main{
-        background-color : #FCF6F5;
         display: flex;
         flex-direction: column;
         align-items: center;

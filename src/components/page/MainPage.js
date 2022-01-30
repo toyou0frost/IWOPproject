@@ -7,11 +7,13 @@ const MainPageStyled = styled.div`
     .mainpage_main > h1{
         font-family: "LEIXO";
         color: #279ed0;
-        font-size: 8.5em;
+        font-size: 6em;
         margin-bottom: 5vh;
     }
     .mainpage_main > p{
         color: #279ed0;
+        font-family: 'KOTRAHOPE';
+        margin-block-start: 0;
     }
     @font-face{
         font-family: 'LEIXO';
@@ -37,7 +39,7 @@ const MainPage = () => {
                     W O P E D U
                 </h1>
                 <p>
-                    IWOP Education
+                    IWOP EDUCATION
                 </p>
             </div>
         </MainPageStyled>

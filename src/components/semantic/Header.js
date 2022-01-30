@@ -13,15 +13,15 @@ const HeaderStyle = styled.div`
     }
     .logo{
         font-family: "LEIXO";
-        color: white;
+        color: #FCF6F5;
         margin-left: 1vh;
+        font-size: 25px;
     }
     .Header_main{
         height: 6vh;
         display: flex;
         padding: 3vh 0vh;
         background-color: #279ed0;
-        color: #FCF6F5;
     }
     .Header_left{
         flex: 1;
@@ -31,7 +31,6 @@ const HeaderStyle = styled.div`
     .Header_center{
         flex: 2;
         color: #FCF6F5;
-        /* display: grid; */
         align-items: center;
     }
     .Header_center > ul > a{

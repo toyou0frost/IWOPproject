@@ -9,14 +9,11 @@ import GetStorageURL from "../function/GetStorageURL";
 import LectureFooter from "../semantic/LectureFooter";
 
 const LectureStyle = styled.div`
-    .Lecture{
-        background-color: #FCF6F5;
-    }
     .Lecture_header{
         display: flex;
         flex-direction: row;
         background-color: #279ed0;
-        color: #FBEAEB;
+        color: #FCF6F5;
         align-items: center;
         height: 6vh;
         padding: 3vh 0vh;
