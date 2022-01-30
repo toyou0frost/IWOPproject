@@ -54,6 +54,11 @@ const LectureStyle = styled.div`
     #text{
         white-space: pre-line;
     }
+    .logo{
+        font-family: "LEIXO";
+        color: white;
+        margin-left: 1vh;
+    }
 `
 
 const Lecture = (props) => {
@@ -87,7 +92,11 @@ const Lecture = (props) => {
             <div className="Lecture">
                 <div className="Lecture_header">
                     <div className="Lecture_header_left">
-                        <Link to={'/'}><img src="" alt="logo" /></Link>
+                        <Link to={'/'}>
+                            <h1 className="logo">
+                                WOPEDU
+                            </h1>
+                        </Link>
                     </div>
                     <div className="Lecture_header_center">
                         <h2>{title}</h2>
