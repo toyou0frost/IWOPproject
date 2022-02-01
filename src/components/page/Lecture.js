@@ -55,6 +55,7 @@ const LectureStyle = styled.div`
         font-family: "LEIXO";
         color: white;
         margin-left: 1vh;
+        font-size: 25px;
     }
 `
 
